@@ -43,7 +43,8 @@
         <a href="#home" class="nav-link active" data-section="home">Home</a>
         <a href="#about" class="nav-link" data-section="about">About</a>
         <a href="#services" class="nav-link" data-section="services">Services</a>
-        <a href="#gallery" class="nav-link" data-section="gallery">Gallery</a>
+        <a href="#reviews" class="nav-link" data-section="reviews">Reviews</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
         <a href="#contact" class="nav-link" data-section="contact">Contact</a>
       </div>
 
@@ -61,7 +62,7 @@
   </nav>
 
   <!-- ====== HERO / HOME ====== -->
-  <section class="page-section" id="home" style="background-image: url('assets/images/front.png');">
+  <section class="page-section" id="home" style="background-image: url('assets/images/img1.png');">
     <div class="scene-bg">
       <div class="clinic-wall"></div>
       <div class="clinic-floor"></div>
@@ -173,7 +174,7 @@
   </section>
 
   <!-- ====== ABOUT ====== -->
-  <section class="page-section" id="about" style="background-image: url('assets/images/img3.png');">
+  <section class="page-section" id="about" style="background-image: url('assets/images/img2.png');">
     <div class="section-scene-bg">
       <div class="led-strip led-section-top"></div>
     </div>
@@ -257,7 +258,7 @@
   </section>
 
   <!-- ====== SERVICES ====== -->
-  <section class="page-section services-section" id="services" style="background-image: url('assets/images/img4.png');">
+  <section class="page-section services-section" id="services" style="background-image: url('assets/images/img3.png');">
     <div class="section-scene-bg">
       <div class="led-strip led-section-top"></div>
     </div>
@@ -321,49 +322,105 @@
     </div>
   </section>
 
-  <!-- ====== GALLERY ====== -->
-  <section class="page-section" id="gallery">
+  <!-- ====== HAPPY CUSTOMERS REVIEWS ====== -->
+  <section class="page-section" id="reviews" style="background-image: url('assets/images/img4.png');">
     <div class="section-scene-bg">
       <div class="led-strip led-section-top"></div>
     </div>
     <div class="section-container">
-      <div class="section-badge anim-in">Gallery</div>
-      <h2 class="section-heading anim-in">Our Work &amp; Recovery Stories</h2>
+      <div class="section-badge anim-in">Testimonials</div>
+      <h2 class="section-heading anim-in">Happy Customers</h2>
       <p class="section-text anim-in">
-        A glimpse into our physiotherapy sessions, patient recovery journeys, and the care we provide every day.
+        Hear from our patients who have experienced life-changing recovery at Bekons Physiotherapy.
       </p>
 
-      <div class="gallery-grid">
-        <div class="glass-panel gallery-item anim-in" data-delay="0.05">
-          <img src="assets/images/1000456351.png" alt="Physiotherapy session" class="gallery-img" />
-          <div class="gallery-caption">Therapy Session</div>
+      <div class="review-slider anim-in" id="reviewSlider">
+        <div class="review-track">
+          <div class="glass-panel review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">&ldquo;After my knee surgery, I was struggling to walk. Dr. Bekon&rsquo;s exercise therapy program got me back on my feet in just 6 weeks. Truly grateful!&rdquo;</p>
+            <div class="review-author">
+              <div class="review-avatar">R</div>
+              <div>
+                <span class="review-name">Rajesh Sharma</span>
+                <span class="review-info">Post-Surgical Rehab</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">&ldquo;I had chronic back pain for 3 years. The electrotherapy and personalized exercises here gave me relief I never thought was possible. Highly recommend!&rdquo;</p>
+            <div class="review-author">
+              <div class="review-avatar">P</div>
+              <div>
+                <span class="review-name">Priya Bora</span>
+                <span class="review-info">Chronic Pain Management</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">&ldquo;My mother had a stroke and Dr. Bekon&rsquo;s neuro physiotherapy sessions made a remarkable difference. She can move her arm again. God bless this team!&rdquo;</p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div>
+                <span class="review-name">Ankur Das</span>
+                <span class="review-info">Neuro Rehabilitation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">&ldquo;As a cricket player, I needed fast recovery from my shoulder injury. The sports rehab program here was excellent &mdash; I&rsquo;m back on the field stronger than ever.&rdquo;</p>
+            <div class="review-author">
+              <div class="review-avatar">D</div>
+              <div>
+                <span class="review-name">Deepjyoti Kalita</span>
+                <span class="review-info">Sports Injury Recovery</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">&ldquo;The nutritional guidance along with physiotherapy was a game changer for my overall health. Dr. Bekon takes a truly holistic approach to healing.&rdquo;</p>
+            <div class="review-author">
+              <div class="review-avatar">M</div>
+              <div>
+                <span class="review-name">Manisha Devi</span>
+                <span class="review-info">Holistic Wellness</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">&ldquo;Very professional and caring staff. The clinic is well-equipped and Dr. Bekon explains every step of the treatment. Best physiotherapy centre in Guwahati!&rdquo;</p>
+            <div class="review-author">
+              <div class="review-avatar">S</div>
+              <div>
+                <span class="review-name">Sanjay Nath</span>
+                <span class="review-info">General Physiotherapy</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="glass-panel gallery-item anim-in" data-delay="0.1">
-          <img src="assets/images/1000456334.png" alt="Patient rehabilitation" class="gallery-img" />
-          <div class="gallery-caption">Rehabilitation</div>
-        </div>
-        <div class="glass-panel gallery-item anim-in" data-delay="0.15">
-          <img src="assets/images/1000456335.png" alt="Treatment in progress" class="gallery-img" />
-          <div class="gallery-caption">Treatment</div>
-        </div>
-        <div class="glass-panel gallery-item anim-in" data-delay="0.2">
-          <img src="assets/images/Physio_banner.png" alt="Dr. Bekon with patient" class="gallery-img" />
-          <div class="gallery-caption">Expert Care</div>
-        </div>
-        <div class="glass-panel gallery-item anim-in" data-delay="0.25">
-          <img src="assets/images/1000456368.png" alt="Recovery progress" class="gallery-img" />
-          <div class="gallery-caption">Recovery</div>
-        </div>
-        <div class="glass-panel gallery-item anim-in" data-delay="0.3">
-          <img src="assets/images/front2.png" alt="Clinic facility" class="gallery-img" />
-          <div class="gallery-caption">Our Facility</div>
-        </div>
+        <div class="review-dots" id="reviewDots"></div>
+        <button class="review-arrow review-prev" id="reviewPrev" aria-label="Previous review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="review-arrow review-next" id="reviewNext" aria-label="Next review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
   </section>
 
   <!-- ====== CONTACT ====== -->
-  <section class="page-section" id="contact" style="background-image: url('assets/images/gptimg.png');">
+  <section class="page-section" id="contact" style="background-image: url('assets/images/img2.png');">
     <div class="section-scene-bg">
       <div class="led-strip led-section-top"></div>
     </div>
@@ -447,7 +504,8 @@
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="portfolio.html">Portfolio</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-social">

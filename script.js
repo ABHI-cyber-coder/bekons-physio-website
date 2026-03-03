@@ -162,7 +162,100 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------
-     9. GLASS PANEL HOVER GLOW TRACKING
+     9. REVIEW CAROUSEL
+     -------------------------------------------------- */
+  const slider = document.getElementById('reviewSlider');
+  if (slider) {
+    const track = slider.querySelector('.review-track');
+    const cards = track.querySelectorAll('.review-card');
+    const dotsWrap = document.getElementById('reviewDots');
+    const prevBtn = document.getElementById('reviewPrev');
+    const nextBtn = document.getElementById('reviewNext');
+    const total = cards.length;
+    let current = 0;
+    let autoTimer = null;
+
+    // Determine how many cards are visible based on viewport
+    const getVisible = () => {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 640) return 2;
+      return 1;
+    };
+
+    let visible = getVisible();
+
+    // Build dot indicators
+    const buildDots = () => {
+      dotsWrap.innerHTML = '';
+      const count = total - visible + 1;
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'review-dot' + (i === current ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      }
+    };
+
+    const updateDots = () => {
+      dotsWrap.querySelectorAll('.review-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    };
+
+    const goTo = (index) => {
+      const maxIndex = total - visible;
+      current = Math.max(0, Math.min(index, maxIndex));
+      const pct = (current / total) * 100;
+      track.style.transform = 'translateX(-' + pct + '%)';
+      updateDots();
+    };
+
+    const goNext = () => goTo(current + 1 >= total - visible + 1 ? 0 : current + 1);
+    const goPrev = () => goTo(current - 1 < 0 ? total - visible : current - 1);
+
+    prevBtn.addEventListener('click', () => { goPrev(); resetAuto(); });
+    nextBtn.addEventListener('click', () => { goNext(); resetAuto(); });
+
+    // Auto-play
+    const startAuto = () => { autoTimer = setInterval(goNext, 4500); };
+    const stopAuto = () => { clearInterval(autoTimer); };
+    const resetAuto = () => { stopAuto(); startAuto(); };
+
+    slider.addEventListener('mouseenter', stopAuto);
+    slider.addEventListener('mouseleave', startAuto);
+
+    // Touch / swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    slider.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    slider.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) goNext(); else goPrev();
+        resetAuto();
+      }
+    }, { passive: true });
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+      const newVisible = getVisible();
+      if (newVisible !== visible) {
+        visible = newVisible;
+        if (current > total - visible) current = total - visible;
+        goTo(current);
+        buildDots();
+      }
+    });
+
+    // Init
+    buildDots();
+    startAuto();
+  }
+
+  /* --------------------------------------------------
+     10. GLASS PANEL HOVER GLOW TRACKING
      -------------------------------------------------- */
   if (isDesktop) {
     document.querySelectorAll('.service-tile, .value-tile, .contact-tile, .sidebar-card').forEach(panel => {
