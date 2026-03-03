@@ -27,9 +27,9 @@
   --bg-body:       transparent;
   --bg-deep:       transparent;
   --bg-surface:    transparent;
-  --bg-card:       transparent;
+  --bg-card:       transparent; 
 
-  /* Glass — light frosted glass for dark text readability */
+  /* Glass — light frosted glass for dark text readability  */
   --glass:         rgba(161, 172, 179, 0.15);
   --glass-strong:  rgba(29, 71, 94, 0.352);
   --glass-border:  rgba(0, 0, 0, .2);
