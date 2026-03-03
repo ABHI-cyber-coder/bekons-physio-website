@@ -80,7 +80,7 @@ ul { list-style: none; }
 
 /* ============================================
    GLASS PANEL — Dark frosted glass
-   ============================================ */
+   ============================================  */
 .glass-panel {
   background: var(--glass);
   backdrop-filter: blur(var(--glass-blur));
