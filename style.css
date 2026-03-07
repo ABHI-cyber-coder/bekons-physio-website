@@ -248,7 +248,22 @@ ul { list-style: none; }
   transform: translateY(-2px);
   box-shadow: 0 6px 28px var(--glow-blue), 0 0 30px var(--glow-blue);
 }
-.nav-actions { display: flex; align-items: center; }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.sairam-logo {
+  height: 58px;
+  width: 90px;
+  object-fit: cover;
+  object-position: center;
+  background: radial-gradient(circle, #0f172a 50%, #1e293b 75%, transparent 100%);
+  border-radius: 50%;
+  padding: 2px;
+  filter: drop-shadow(0 0 8px rgba(96,165,250,.2));
+  transition: transform .3s var(--ease-spring), filter .3s;
+}
+.sairam-logo:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 14px rgba(96,165,250,.35));
+}
 
 /* Mobile Toggle */
 .mobile-toggle {
