@@ -547,7 +547,36 @@ ul { list-style: none; }
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.doc-title { font-size: 10px; color: var(--text-muted); margin-bottom: 14px; }
+.doc-title { font-size: 10px; color: var(--text-muted); margin-bottom: 6px; }
+.doc-reg {
+  font-size: 9px; font-weight: 600;
+  color: var(--text-muted); margin-bottom: 10px;
+  letter-spacing: .5px;
+}
+.doc-training {
+  font-size: 9px; color: var(--text-dim);
+  line-height: 1.5; margin-bottom: 10px;
+}
+.doc-experience {
+  margin-bottom: 14px; text-align: center;
+}
+.exp-badge {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  padding: 4px 14px; border-radius: 999px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #fff;
+  box-shadow: 0 2px 12px var(--glow-blue);
+  margin-bottom: 4px;
+}
+.exp-detail {
+  font-size: 9px; color: var(--text-muted);
+}
+.doc-reg-about {
+  font-size: 11px; font-weight: 600;
+  color: var(--text-muted); margin-top: 4px;
+  letter-spacing: .3px;
+}
 .doc-quals {
   display: flex; flex-wrap: wrap; gap: 4px;
   justify-content: center; margin-bottom: 16px;

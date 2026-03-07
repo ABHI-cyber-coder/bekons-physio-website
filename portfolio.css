@@ -3,9 +3,46 @@
    ============================================ */
 
 /* ---- Hero Profile ---- */
+:root{
+    /* Glass — white frosted glass */
+  --glass:         rgba(255, 255, 255, .35);
+  --glass-strong:  rgba(255, 255, 255, .5);
+  --glass-border:  rgba(0, 0, 0, .18);
+  --glass-inner:   rgba(255, 255, 255, .4);
+  --glass-blur:    18px;
+  --glass-blur-lg: 28px;
+
+    /* Transitions */
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+
+}
 .portfolio-hero {
   padding: calc(var(--nav-h) + 48px) 0 40px;
 }
+.glass-panel {
+  background: var(--glass);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, .08),
+    0 1px 3px rgba(0, 0, 0, .06),
+    inset 0 1px 0 rgba(255, 255, 255, .5);
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out), border-color .4s;
+}
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 5%, rgba(255,255,255,.15) 30%, rgba(255,255,255,.25) 50%, rgba(255,255,255,.15) 70%, transparent 95%);
+  z-index: 1;
+}
+
 .portfolio-hero-inner {
   display: flex;
   flex-direction: column;
@@ -34,7 +71,32 @@
 }
 .portfolio-role {
   font-size: 14px;
+  font-weight: 600;
   color: var(--text-dim);
+  margin-bottom: 2px;
+}
+.portfolio-role-sub {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.portfolio-reg {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: .5px;
+  margin-bottom: 6px;
+}
+.portfolio-quals {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.portfolio-training {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
   margin-bottom: 20px;
 }
 .portfolio-stats {
@@ -231,6 +293,26 @@
   .carousel-prev { left: 6px; }
   .carousel-next { right: 6px; }
   .portfolio-stats { gap: 20px; }
+}
+
+.page-section {
+  position: relative; padding: 90px 0;
+  overflow: hidden;
+}
+.page-section:first-of-type {
+  padding-top: calc(var(--nav-h) + 40px);
+  /* Add per-section bg image via inline style:
+     background: url('...') center/cover no-repeat; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Light overlay on section bg images for readability */
+.page-section::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 0;
+  background: rgba(255, 255, 255, .4);
+  pointer-events: none;
 }
 
 /* Mobile menu for portfolio page */
