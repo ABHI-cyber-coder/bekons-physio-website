@@ -250,7 +250,7 @@ ul { list-style: none; }
 }
 .nav-actions { display: flex; align-items: center; gap: 12px; }
 .sairam-logo {
-  height: 59px;
+  height: 100px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(180, 130, 20, .3));
@@ -261,10 +261,10 @@ ul { list-style: none; }
   filter: drop-shadow(0 2px 12px rgba(200, 150, 30, .5));
 }
 @media (max-width: 1024px) {
-  .sairam-logo { height: 44px; }
+  .sairam-logo { height: 100px; }
 }
 @media (max-width: 767px) {
-  .sairam-logo { height: 36px; }
+  .sairam-logo { height: 100px; }
 }
 
 /* Mobile Toggle */
