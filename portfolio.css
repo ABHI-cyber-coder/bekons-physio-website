@@ -173,6 +173,45 @@
   color: var(--text-muted);
 }
 
+/* Scoped to Experience Section */
+#experience .services-grid {
+  display: flex;
+  flex-direction: column;  /* Stack each tile vertically */
+  gap: 12px;
+}
+
+/* Tiles */
+#experience .service-tile {
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  text-align: left;
+  overflow: hidden;
+}
+
+/* Text inside tiles */
+#experience .service-label {
+  display: block;
+  font-size: 14px;
+
+  /* Desktop: single line with ellipsis */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Mobile Fix ---------- */
+/* For small screens, allow wrapping but keep padding and clean layout */
+@media (max-width: 600px) {
+  #experience .service-label {
+    white-space: normal;  /* allow text to wrap */
+    overflow: visible;    /* remove cut-off */
+    text-overflow: unset; /* remove ellipsis */
+  }
+}
+
 /* Viewport */
 .carousel-viewport {
   position: relative;
