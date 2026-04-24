@@ -210,6 +210,34 @@ ul { list-style: none; }
   text-transform: uppercase;
 }
 
+.hero-brand {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 18px;
+  width: fit-content;
+  max-width: 100%;
+  text-align: left;
+}
+
+.hero-brand .brand-logo {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+}
+
+.hero-brand .brand-text {
+  justify-content: center;
+}
+
+.hero-brand .brand-name {
+  display: block;
+  font-size: clamp(13px, 1.7vw, 18px);
+  line-height: 1.25;
+  letter-spacing: 0.4px;
+  text-align: left;
+}
+
 /* Nav Links */
 .nav-links { display: flex; gap: 4px; }
 .nav-link {
@@ -1190,6 +1218,18 @@ ul { list-style: none; }
   .page-section { padding: 64px 0; }
   .page-section:first-of-type { padding-top: calc(var(--nav-h) + 24px); }
   .hero-glass { padding: 28px 16px; }
+  .hero-brand {
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-brand .brand-logo {
+    width: 52px;
+    height: 52px;
+  }
+  .hero-brand .brand-name {
+    font-size: 12px;
+    line-height: 1.2;
+  }
   .section-container { padding: 0 20px; }
   .about-banner-img { height: 280px; }
 }
